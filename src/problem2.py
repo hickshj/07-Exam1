@@ -12,15 +12,15 @@ import math
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    problem2a_testing()
-    run_test_problem2b()
+    # problem2a_testing()
+    # run_test_problem2b()
     run_test_problem2c()
 
 
 def problem2a_testing():
     """ Tests the   sum_of_digits_of_sum_of_factors   function. """
     ############################################################################
-    #  TODO: 2. Implement this TEST function.  See the IMPORTANT NOTE below.
+    #  Done: 2. Implement this TEST function.  See the IMPORTANT NOTE below.
     #     This problem TESTS the    sum_of_digits_of_sum_of_factors    function
     #     that is defined below.  Include at least **   4   ** tests.
     #     Use the usual format:
@@ -44,6 +44,34 @@ def problem2a_testing():
     print('---------------------------------------------------------')
     print('Testing the   sum_of_digits_of_sum_of_factors   function:')
     print('---------------------------------------------------------')
+
+    # Test 1:
+    expected = 7
+    actual = sum_of_digits_of_sum_of_factors(4)
+    print()
+    print('Expected:', expected)
+    print('Actual:  ', actual)
+
+    # Test 2:
+    expected = 6
+    actual = sum_of_digits_of_sum_of_factors(5)
+    print()
+    print('Expected:', expected)
+    print('Actual:  ', actual)
+
+    # Test 3:
+    expected = 12
+    actual = sum_of_digits_of_sum_of_factors(6)
+    print()
+    print('Expected:', expected)
+    print('Actual:  ', actual)
+
+    # Test 4:
+    expected = 8
+    actual = sum_of_digits_of_sum_of_factors(7)
+    print()
+    print('Expected:', expected)
+    print('Actual:  ', actual)
 
 
 def sum_of_digits_of_sum_of_factors(n):
@@ -70,7 +98,7 @@ def sum_of_digits_of_sum_of_factors(n):
 
 
 ################################################################################
-# TODO: 3.  READ the green doc-string for the   number_of_factors   function
+# Done: 3.  READ the green doc-string for the   number_of_factors   function
 #    defined below.  You do NOT need to understand its implementation,
 #    just its specification (per the doc-string).
 #    You should  ** CALL **  that function as needed in implementing
@@ -310,7 +338,7 @@ def problem2b(a, b, x):
          and the sum   16 + 18 + 20 + 24   is 78.
      """
     ############################################################################
-    # TODO: 4. Implement and test this function.  See the IMPORTANT NOTE below!
+    # Done: 4. Implement and test this function.  See the IMPORTANT NOTE below!
     #          Tests have been written for you (above).
     ############################################################################
     # TODO (continued): IMPORTANT NOTE:
@@ -318,6 +346,14 @@ def problem2b(a, b, x):
     # TODO (continued):       (i.e., call) the   number_of_factors   function
     #                         that is DEFINED ABOVE.
     ############################################################################
+    total = 0
+    q = b - a
+    for k in range(a, b + 1):  # I can't remember if we were allowed to use this form or not.
+        # It does not specifically say that we can't
+        numb = number_of_factors(k)
+        if numb >= x:
+            total = total + k
+    return total
 
 
 def run_test_problem2c():
@@ -366,7 +402,7 @@ def run_test_problem2c():
     print_actual_result_of_test(expected, actual, test_results)
 
     # Test 6:
-    expected = 420   # from 101 to 109: 311 + 109 = 420
+    expected = 420  # from 101 to 109: 311 + 109 = 420
     print_expected_result_of_test([100], expected, test_results,
                                   format_string)
     actual = problem1c(100)
@@ -442,9 +478,13 @@ def problem1c(m):
     # TODO (continued)    You get   NO credit   if your solution is more
     # TODO (continued)    than 3 lines of code (and it can be done in 1 line).
     ############################################################################
+    for k in range(m, m + 11):
+        if m % k == 1:
 
 
-################################################################################
+        ################################################################################
+
+
 # Our tests use the following to print error messages in red.
 # Do NOT change it.  You do NOT have to do anything with it.
 ################################################################################
