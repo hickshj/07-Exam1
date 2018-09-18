@@ -110,10 +110,27 @@ def problem3(point, length, delta, window):
 
     line = rg.Line(point, end)
     line.thickness = 3
+    a = 0
 
-    l1 = rg.Line(point, q)
-    l1.thickness = 3
-    l1.attach_to(window)
+    for k in range((length // delta) + 1):
+        if a == 0:
+            color = 'magenta'
+            a = 1
+        elif a == 1:
+            color = 'cyan'
+            a = 2
+        elif a == 2:
+            color = 'spring green'
+            a = 0
+        l1 = rg.Line(point, q)
+        l1.thickness = 3
+        l1.color = color
+        l1.attach_to(window)
+        point.y = point.y + delta
+        q.x = q.x + delta
+        q.y = q.y + delta
+
+
 
     line.attach_to(window)
     window.render()

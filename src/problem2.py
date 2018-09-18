@@ -347,7 +347,6 @@ def problem2b(a, b, x):
     #                         that is DEFINED ABOVE.
     ############################################################################
     total = 0
-    q = b - a
     for k in range(a, b + 1):  # I can't remember if we were allowed to use this form or not.
         # It does not specifically say that we can't
         numb = number_of_factors(k)
@@ -478,8 +477,9 @@ def problem1c(m):
     # TODO (continued)    You get   NO credit   if your solution is more
     # TODO (continued)    than 3 lines of code (and it can be done in 1 line).
     ############################################################################
-    for k in range(m, m + 11):
-        if m % k == 1:
+    for k in range(m, (m // 2) + 1):
+        if m % k == 0:
+            return problem2b(m, (m + 10), 0)
 
 
         ################################################################################
